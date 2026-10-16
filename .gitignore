@@ -5,6 +5,9 @@ __pycache__/
 *.spec
 *.code-workspace
 
+# Private
+doc/
+
 # Packaging and Build Artifacts
 dist/
 build/

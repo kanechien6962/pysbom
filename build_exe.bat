@@ -75,8 +75,9 @@ python -m PyInstaller ^
     --add-data "sbom_48x48.ico;." ^
     --noconfirm ^
     --clean ^
-    --onedir ^
+    --onefile ^
     --windowed ^
+    --distpath "dist\%APP_NAME%" ^
     --paths "%~dp0python-uswid" ^
     --collect-all uswid ^
     --name "%APP_NAME%" ^
