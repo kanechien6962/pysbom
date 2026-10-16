@@ -1,0 +1,27 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "urn:uuid:65378efd-32b5-4bdc-b1a7-15be05d594bb",
+  "name": "NOASSERTION",
+  "files": [],
+  "creationInfo": {
+    "creators": [
+      "Tool: uSWID",
+      "Organization: ILITEK ITH Corporation."
+    ],
+    "created": "2026-10-15T18:05:50Z"
+  },
+  "documentDescribes": [
+    "SPDXRef-ILITEK-TCON-Released-N156HCA-EAB-TCON-FW"
+  ],
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-ILITEK-TCON-Released-N156HCA-EAB-TCON-FW",
+      "downloadLocation": "NOASSERTION",
+      "summary": "ILITEK capsule for ASUS",
+      "versionInfo": "06.2026.09.14",
+      "originator": "Organization: ILITEK ITH Corporation."
+    }
+  ]
+}

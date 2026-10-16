@@ -1,0 +1,55 @@
+{
+  "@context": "https://spdx.org/rdf/3.0/spdx-context.jsonld",
+  "@graph": [
+    {
+      "type": "CreationInfo",
+      "@id": "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#creation-info",
+      "specVersion": "3.0",
+      "created": "2026-10-14T17:19:25Z",
+      "createdBy": [
+        "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#agent-1",
+        "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#agent-2"
+      ]
+    },
+    {
+      "type": "SpdxDocument",
+      "spdxId": "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#SPDXRef-DOCUMENT",
+      "creationInfo": "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#creation-info",
+      "name": "NOASSERTION",
+      "dataLicense": "CC0-1.0",
+      "element": [
+        "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#agent-1",
+        "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#agent-2",
+        "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#SPDXRef-ILITEK-TCON-Released-N156HCA-EAB-TCON-FW"
+      ],
+      "rootElement": [
+        "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#SPDXRef-ILITEK-TCON-Released-N156HCA-EAB-TCON-FW"
+      ],
+      "profileConformance": [
+        "core",
+        "software"
+      ]
+    },
+    {
+      "type": "SoftwareAgent",
+      "spdxId": "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#agent-1",
+      "name": "uSWID",
+      "creationInfo": "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#creation-info"
+    },
+    {
+      "type": "Organization",
+      "spdxId": "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#agent-2",
+      "name": "ILITEK ITH Corporation.",
+      "creationInfo": "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#creation-info"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#SPDXRef-ILITEK-TCON-Released-N156HCA-EAB-TCON-FW",
+      "creationInfo": "urn:uuid:7a6cda81-2ab5-4fd7-b76f-1f0e9bae99c1#creation-info",
+      "name": "TCON-Firmware",
+      "software_packageVersion": "06.2026.09.14",
+      "software_downloadLocation": "NOASSERTION",
+      "summary": "ILITEK capsule for ASUS"
+    }
+  ]
+}
