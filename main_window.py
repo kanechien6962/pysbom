@@ -91,7 +91,7 @@ class MainWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
         self.ui = Ui_MainWindow()
-        self.setWindowIcon(QIcon(resource_path("sbom_48x48.ico")))
+        self.setWindowIcon(QIcon(resource_path("sbom_256x256.ico")))
         self.ui.setupUi(self)# 初始化 Qt Designer 產生的 UI 佈局
         self.ini_path: Path | None = None # 記錄目前載入的輸入檔案路徑
         self.output_path: Path | None = None # 記錄輸出檔案路徑
@@ -142,8 +142,18 @@ class MainWindow(QMainWindow):
         self.ui.iniEditor.modificationChanged.connect(self.update_title)
 
         # 設定全域快捷鍵：Ctrl+O 載入、Ctrl+S 儲存
-        QShortcut(QKeySequence.StandardKey.Open, self, activated=self.load_ini)
-        QShortcut(QKeySequence.StandardKey.Save, self, activated=self.save_current_ini)
+        # QShortcut(QKeySequence.StandardKey.Open, self, activated=self.load_ini)
+        # QShortcut(QKeySequence.StandardKey.Save, self, activated=self.save_current_ini)
+
+        # check domain
+        self.isIli = False
+        dns_domain = os.environ.get("USERDNSDOMAIN")
+
+        # check dns_domain and None string
+        if dns_domain and dns_domain.lower() == "ili.com.tw":
+            self.isIli = True
+        else:
+            self.append_log("Please use this within ilitek environment")
 
     def update_title(self, modified: bool = False) -> None:
         """更新視窗標題，若檔案有修改則在標題後方加上星號 (*)"""
@@ -202,8 +212,9 @@ class MainWindow(QMainWindow):
         self.ui.jsonPreview.clear()
         self.ui.spdx3JsonPreview.clear()
         self.ui.pathLabel.setText(str(path))
-        self.ui.saveButton.setEnabled(not INPUT_BINARY)# 二進位檔停用儲存按鈕
-        self.ui.generateButton.setEnabled(True)
+        if(self.isIli == True):
+            self.ui.saveButton.setEnabled(not INPUT_BINARY)# 二進位檔停用儲存按鈕
+            self.ui.generateButton.setEnabled(True)
         self.update_title(False)
         self.statusBar().showMessage(f"Loaded {path.name}")
         self.append_log(f"Loaded: {path}")

@@ -71,8 +71,8 @@ if errorlevel 1 goto :error
 
 REM Build Python application
 python -m PyInstaller ^
-    --icon "sbom_48x48.ico" ^
-    --add-data "sbom_48x48.ico;." ^
+    --icon "sbom_256x256.ico" ^
+    --add-data "sbom_256x256.ico;." ^
     --noconfirm ^
     --clean ^
     --onefile ^

@@ -8,6 +8,8 @@ __pycache__/
 # Private
 doc/
 
+.venv/
+
 # Packaging and Build Artifacts
 dist/
 build/
