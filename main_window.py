@@ -145,16 +145,6 @@ class MainWindow(QMainWindow):
         # QShortcut(QKeySequence.StandardKey.Open, self, activated=self.load_ini)
         # QShortcut(QKeySequence.StandardKey.Save, self, activated=self.save_current_ini)
 
-        # check domain
-        self.isIli = False
-        dns_domain = os.environ.get("USERDNSDOMAIN")
-
-        # check dns_domain and None string
-        if dns_domain and dns_domain.lower() == "ili.com.tw":
-            self.isIli = True
-        else:
-            self.append_log("Please use this within ilitek environment")
-
     def update_title(self, modified: bool = False) -> None:
         """更新視窗標題，若檔案有修改則在標題後方加上星號 (*)"""
         self.setWindowTitle(APP_TITLE + (" *" if modified else ""))
@@ -212,9 +202,8 @@ class MainWindow(QMainWindow):
         self.ui.jsonPreview.clear()
         self.ui.spdx3JsonPreview.clear()
         self.ui.pathLabel.setText(str(path))
-        if(self.isIli == True):
-            self.ui.saveButton.setEnabled(not INPUT_BINARY)# 二進位檔停用儲存按鈕
-            self.ui.generateButton.setEnabled(True)
+        self.ui.saveButton.setEnabled(not INPUT_BINARY)# 二進位檔停用儲存按鈕
+        self.ui.generateButton.setEnabled(True)
         self.update_title(False)
         self.statusBar().showMessage(f"Loaded {path.name}")
         self.append_log(f"Loaded: {path}")
