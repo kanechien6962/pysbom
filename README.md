@@ -92,5 +92,3 @@ build_exe.bat
 ---
 
 ## 📄 License
-
-[Specify your license here, e.g., MIT License]
